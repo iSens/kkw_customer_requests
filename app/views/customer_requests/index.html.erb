@@ -7,7 +7,7 @@ Kiddie Kobbler Westboro
 <table class="table table-sm sortable">
   <thead>
     <tr>
-     <th data-defaultsort="asc"></th>    
+     <th data-defaultsort="asc">Date</th>    
       <th data-defaultsort='disabled'>Customer Name</th>
       <th data-defaultsort='disabled'>Customer Phone</th>
       <th>Brand</th>
@@ -21,7 +21,7 @@ Kiddie Kobbler Westboro
   <tbody>
     <% @customer_requests.each do |customer_request| %>
       <tr>
-        <td><%= customer_request.id %></td>
+        <td><%= customer_request.created_at.strftime('%b. %d, %Y') %></td>
         <td><%= customer_request.customer_name %></td>
         <td><%= customer_request.customer_phone %></td>
         <td><%= customer_request.brand %></td>
