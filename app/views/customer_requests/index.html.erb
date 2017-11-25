@@ -28,7 +28,7 @@ Kiddie Kobbler Westboro
         <td><%= customer_request.notes %></td>
         <td><%= customer_request.status %></td>
         <td><%= customer_request.deposit.to_yesno %></td>
-        <td><%= link_to 'Show', customer_request, class: 'btn-primary btn-sm' %> | <%= link_to 'Edit', edit_customer_request_path(customer_request), class: ' btn-sm btn-warning' %> | <%= link_to 'Destroy', customer_request, method: :delete, data: { confirm: 'Are you sure?' }, class: ' btn-sm btn-danger'  %></td>
+        <td><%= link_to 'Show', customer_request, class: 'btn-primary btn-sm' %> | <%= link_to 'Edit', edit_customer_request_path(customer_request), class: ' btn-sm btn-warning' %> | <%= link_to 'Destroy', customer_request, method: :delete, data: { confirm: 'Are you sure?' }, class: ' btn-sm btn-danger' %></td>
       </tr>
     <% end %>
   </tbody>
