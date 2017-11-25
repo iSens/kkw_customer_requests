@@ -1,0 +1,47 @@
+<%= form_with(model: customer_request, local: true) do |form| %>
+  <% if customer_request.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(customer_request.errors.count, "error") %> prohibited this customer_request from being saved:</h2>
+
+      <ul>
+      <% customer_request.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="control-group">
+    <%= form.label :customer_name %>
+    <%= form.text_field :customer_name, id: :customer_request_customer_name, class: 'form-control' %>
+  </div>
+
+  <div class="control-group">
+    <%= form.label :customer_phone %>
+    <%= form.text_field :customer_phone, id: :customer_request_customer_phone, class: 'form-control', autofocus: true, placeholder: 'xxx-xxx-xxxx' %>
+  </div>
+
+  <div class="control-group">
+    <%= form.label :brand %>
+    <%= form.text_field :brand, id: :customer_request_brand, class: 'form-control' %>
+  </div>
+
+  <div class="control-group">
+    <%= form.label :notes %>
+    <%= form.text_field :notes, id: :customer_request_notes, class: 'form-control' %>
+  </div>
+
+  <div class="control-group">
+    <%= form.label :status %>
+    <%= form.select(:status, options_for_select(['Pennding', 'Ordered', 'Called']), {}, class: 'form-control') %>
+  </div>
+
+  <div class="control-group">
+    <%= form.label :deposit %>
+    <%= form.check_box :deposit, id: :customer_request_deposit, class: 'form-control' %>
+  </div>
+<hr />
+  <div class="control-group">
+    <%= form.submit 'Add a new request', :class => 'btn btn-primary float-left kkw__submit-btn' %>
+  </div>
+<% end %>

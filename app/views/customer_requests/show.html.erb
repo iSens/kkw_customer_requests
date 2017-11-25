@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Customer name:</strong>
+  <%= @customer_request.customer_name %>
+</p>
+
+<p>
+  <strong>Customer phone:</strong>
+  <%= @customer_request.customer_phone %>
+</p>
+
+<p>
+  <strong>Brand:</strong>
+  <%= @customer_request.brand %>
+</p>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @customer_request.notes %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @customer_request.status %>
+</p>
+
+<p>
+  <strong>Deposit:</strong>
+  <%= @customer_request.deposit %>
+</p>
+
+<%= link_to 'Edit', edit_customer_request_path(@customer_request), :class => 'btn btn-primary' %> |
+<%= link_to 'Back', customer_requests_path, :class => 'btn btn-info' %>

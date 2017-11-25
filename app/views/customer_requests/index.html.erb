@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+<h3>
+Kiddie Kobbler Westboro
+<small class="text-muted">Customer Requests</small>
+</h3>
+
+<table class="table table-sm sortable">
+  <thead>
+    <tr>
+     <th data-defaultsort="asc"></th>    
+      <th data-defaultsort='disabled'>Customer Name</th>
+      <th data-defaultsort='disabled'>Customer Phone</th>
+      <th>Brand</th>
+      <th data-defaultsort='disabled'>Notes</th>
+      <th>Status</th>
+      <th data-defaultsort='disabled'>Deposit</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @customer_requests.each do |customer_request| %>
+      <tr>
+        <td><%= customer_request.id %></td>
+        <td><%= customer_request.customer_name %></td>
+        <td><%= customer_request.customer_phone %></td>
+        <td><%= customer_request.brand %></td>
+        <td><%= customer_request.notes %></td>
+        <td><%= customer_request.status %></td>
+        <td><%= customer_request.deposit %></td>
+        <td><%= link_to 'Show', customer_request, class: 'btn-primary btn-sm' %> | <%= link_to 'Edit', edit_customer_request_path(customer_request), class: ' btn-sm btn-warning' %> | <%= link_to 'Destroy', customer_request, method: :delete, data: { confirm: 'Are you sure?' }, class: ' btn-sm btn-danger'  %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Customer Request', new_customer_request_path, class: 'btn btn-success' %>
