@@ -21,7 +21,7 @@ Kiddie Kobbler Westboro
   <tbody>
     <% @customer_requests.each do |customer_request| %>
       <tr>
-        <td><%= customer_request.created_at.strftime('%b. %d, %Y') %></td>
+        <td><%= customer_request.created_at.strftime('%b. %d') %></td>
         <td><%= customer_request.customer_name %></td>
         <td><%= customer_request.customer_phone %></td>
         <td><%= customer_request.brand %></td>
