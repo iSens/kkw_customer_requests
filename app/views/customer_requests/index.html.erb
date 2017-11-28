@@ -1,39 +1,35 @@
 <p id="notice"><%= notice %></p>
-<h3>
-Kiddie Kobbler Westboro
-<small class="text-muted">Customer Requests</small>
-</h3>
+<div class="row">
+<div class="col"><h3>Kiddie Kobbler Westboro <small class="text-muted"> Customer Requests</small></h3></div>
+<div class="col"><%= link_to 'New Customer Request', new_customer_request_path, class: 'float-right btn-sm btn-success' %></div>
+</div>
 
-<table class="table table-sm sortable">
-  <thead>
-    <tr>
-     <th data-defaultsort="asc">Date</th>    
-      <th data-defaultsort='disabled'>Customer Name</th>
-      <th data-defaultsort='disabled'>Customer Phone</th>
-      <th>Brand</th>
-      <th data-defaultsort='disabled'>Notes</th>
-      <th>Status</th>
-      <th data-defaultsort='disabled'>Deposit</th>
-      <th></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @customer_requests.each do |customer_request| %>
-      <tr>
-        <td><%= customer_request.created_at.strftime('%b. %d') %></td>
-        <td><%= customer_request.customer_name %></td>
-        <td><%= customer_request.customer_phone %></td>
-        <td><%= customer_request.brand %></td>
-        <td><%= customer_request.notes %></td>
-        <td><%= customer_request.status %></td>
-        <td><%= customer_request.deposit.to_yesno %></td>
-        <td><%= link_to 'Show', customer_request, class: 'btn-primary btn-sm' %> | <%= link_to 'Edit', edit_customer_request_path(customer_request), class: ' btn-sm btn-warning' %> | <%= link_to 'Destroy', customer_request, method: :delete, data: { confirm: 'Are you sure?' }, class: ' btn-sm btn-danger' %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
-<br>
+<ul class="list-group">
+  <li class="list-group-item active row kkw__list-heading">
+    <div class="col col-sm-1">Date</div>
+    <div class="col col-md-2">Customer Name</div>
+    <div class="col col-md-2">Customer Phone</div>
+    <div class="col col-md-1">Brand</div>
+    <div class="col col-md-4">Notes</div>
+    <div class="col col-md-1">Status</div>
+    <div class="col col-md-1">Deposit</div>
+  </li>
+  <% @customer_requests.each do |customer_request| %>
+  <li class="list-group-item row kkw__list-list">
+  <div class="col col-md-1"><%= customer_request.created_at.strftime('%b. %d') %></div>
+  <div class="col col-md-2"><%= customer_request.customer_name %></div>
+  <div class="col col-md-2"><%= customer_request.customer_phone %></div>
+  <div class="col col-md-1"><%= customer_request.brand %></div>
+  <div class="col col-md-4 kkw__note-view"><%= customer_request.notes %></div>
+  <div class="col col-md-1"><%= customer_request.status %></div>
+  <div class="col col-md-1"><%= customer_request.deposit.to_yesno %></div>
+  <a href="#" class="kkw__tools-showHide">
+  <div class="kkw__tools"><%= link_to 'Show', customer_request, class: 'btn-primary btn-sm' %> | <%= link_to 'Edit', edit_customer_request_path(customer_request), class: ' btn-sm btn-warning' %> | <%= link_to 'Destroy', customer_request, method: :delete, data: { confirm: 'Are you sure?' }, class: ' btn-sm btn-danger' %></div></a>
+  </li>
+  <% end %>
+<ul>
 
-<%= link_to 'New Customer Request', new_customer_request_path, class: 'btn btn-success' %>
+
+

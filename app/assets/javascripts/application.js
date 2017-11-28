@@ -16,3 +16,9 @@
 //= require bootstrap
 //= require moment
 //= require bootstrap-sortable
+$(document).ready(function(){
+    $('.kkw__tools-showHide').on('click', function (e) {
+        e.stopPropagation();
+        $(this).next().toggle();
+    });
+});

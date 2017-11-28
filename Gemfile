@@ -57,3 +57,4 @@ gem 'jquery-rails'
 gem 'rails_12factor', group: :production
 gem 'momentjs-rails'
 gem 'rails_bootstrap_sortable'
+gem "font-awesome-rails"
